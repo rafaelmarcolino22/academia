@@ -1,10 +1,10 @@
-from django.shortcuts import render
-
-def Base(request):
-    return render(request, 'base.html')
+from django.shortcuts import render, get_object_or_404
+from .  models import alunoTreino
 
 def rotinaTreinos(request):
-    
-    return render(request, 'rotina.html')    
+    exerc = alunoTreino.objects.all
+    return render(request, 'rotina.html', {'exerc':exerc})   
+
+
 
 # Create your views here.
