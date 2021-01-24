@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(219, 202, 226);
+    padding: 0px;
+}
+
+/*  Menu */
+
+.container-fluid{
+    padding: 0px;
+}
+
+.navbar{
+    height: 100px;
+    border-bottom: 1px solid rgb(78, 73, 80);
+}
+
+.navbar-nav{
+    margin: 800px; 
+}
+
+.navbar-nav {
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.navbar-brand{
+    margin-left: 50px;
+    font-size: 30px;
+}
+
+
+/*  rodape   */ 
+
+.rodape{
+    height: 200px;
+    width: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+
+}
+
+.rodape h3{
+    padding-top: 70px;}
