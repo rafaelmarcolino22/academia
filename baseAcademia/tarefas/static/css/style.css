@@ -42,3 +42,26 @@ body{
 
 .rodape h3{
     padding-top: 70px;}
+
+
+.divtarefas{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid rgb(15, 7, 7) ;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: blanchedalmond;
+
+}    
+
+.exc{
+    border-bottom: 1px solid black;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.exc h3{
+    text-align: center;
+}
