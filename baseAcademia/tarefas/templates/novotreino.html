@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+    <div class="offset-2 col-md-8 newbtn"> 
+        <form method="post">
+            {% csrf_token %}
+            {{ forms | crispy}}
+
+            <input type="submit" value=" Adicionar " class="btn btn-success btnne">
+
+
+
+        </form>
+    </div> 
+{% endblock %}

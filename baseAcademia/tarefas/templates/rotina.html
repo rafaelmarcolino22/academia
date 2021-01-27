@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="offset-1 col-md-10">
-
+    <div class="botao">
+         <a href="/oi/"> <button type="button" class="btn btn-primary">Novo</button></a> 
+    </div>    
     <div class="divtarefas">
     
     {% for exercicios in exerc %}
@@ -14,6 +16,10 @@
                 <div class="col-md-2">
 
                 <h3>{{exercicios.repeticao}} </h3> 
+                </div>
+                <div class="col-md-2 offset-3">
+                    <button type="button" class="btn btn-success">Success</button>
+
                 </div>
             </div>
         </div>
