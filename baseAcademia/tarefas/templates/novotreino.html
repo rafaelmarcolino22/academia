@@ -1,4 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>oi</h1>    
+
+    <div class="offset-2 col-md4"> 
+        <form method="post">
+            {% csrf_token %}
+            {{ forms.as_p }}
+            <input type="submit" value=" Adicionar " class="btn btn-succeses">
+
+
+
+        </form>
+    </div> 
 {% endblock %}
