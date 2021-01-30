@@ -25,6 +25,12 @@ def novoTreino(request):
     return render(request, 'novotreino.html', {'forms':forms})
 
 
+def editarExerc(request):
+    
+    exerc = alunoTreino.objects.all
+
+    return render(request, 'editar.html', {'exerc':exerc})
+
 
 
 
