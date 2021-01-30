@@ -7,12 +7,6 @@ def rotinaTreinos(request):
     return render(request, 'rotina.html', {'exerc':exerc})   
 
 
-
-
-
-
-
-
 def novoTreino(request):
     if request.method == 'POST':
 
