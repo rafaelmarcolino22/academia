@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .  models import alunoTreino
-from . forms import TreinoNov
+from .models import alunoTreino
+from .forms import TreinoNov
 
 def rotinaTreinos(request):
     exerc = alunoTreino.objects.all
@@ -16,26 +16,25 @@ def rotinaTreinos(request):
 def novoTreino(request):
     if request.method == 'POST':
 
-        form = TreinoNov(request.POST)
+        forms = TreinoNov(request.POST)
 
-        if form.is_valid():
-            exerc =  form.save(commit=False)
+        if forms.is_valid():
+            exerc =  forms.save(commit=False)
             exerc.done = 'doing'
             exerc.save()
             return redirect('/')
 
     else:
         
-        form = TreinoNov()
+        forms = TreinoNov()
 
-    return render(request, 'novotreino.html', {'form':form})
-
-
+    return render(request, 'novotreino.html', {'forms':forms})
 
 
 
 
-    return render(request, 'novotreino.html', {'forms': forms})    
+
+
 
 
 
