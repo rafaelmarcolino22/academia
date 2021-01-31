@@ -33,8 +33,20 @@ def editarExerc(request):
 
 def edicao(request, id):
     exerc = get_object_or_404(alunoTreino, pk=id)
+    forms = alunoTreino(instance=exerc)
 
-    return render(request, 'edicao.html', {'exerc':exerc})
+    if(request.method == 'POST'):
+        forms = alunoTreino(request.POST, instance=exerc)
+
+        if(request.method == 'POST'):
+            forms = alunoTreino(request.POST, instance=exerc)
+
+            if(forms.is_valid()):
+                exerc.save()
+                return render(request, 'edicao.html', {'exerc':exerc, 'forms':forms})
+
+
+    return render(request, 'edicao.html', {'exerc':exerc, 'forms':forms})
 
 
 
