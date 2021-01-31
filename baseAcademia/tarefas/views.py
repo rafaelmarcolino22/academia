@@ -3,8 +3,8 @@ from .models import alunoTreino
 from .forms import TreinoNov
 
 def rotinaTreinos(request):
-    exerc = alunoTreino.objects.all
-    return render(request, 'rotina.html', {'exerc':exerc})   
+    exercs = alunoTreino.objects.all
+    return render(request, 'rotina.html', {'exercs':exercs})   
 
 
 def novoTreino(request):
@@ -26,32 +26,19 @@ def novoTreino(request):
 
 
 def editarExerc(request):    
-    exerc = alunoTreino.objects.all
+    exercs = alunoTreino.objects.all
 
-    return render(request, 'editar.html', {'exerc':exerc})
+    return render(request, 'editar.html', {'exercs':exercs})
 
 
 def edicao(request, id):
     exerc = get_object_or_404(alunoTreino, pk=id)
-    forms = alunoTreino(instance=exerc)
+    forms = TreinoNov(instance=exerc)
 
     if(request.method == 'POST'):
-        forms = alunoTreino(request.POST, instance=exerc)
-
-        if(request.method == 'POST'):
-            forms = alunoTreino(request.POST, instance=exerc)
-
-            if(forms.is_valid()):
-                exerc.save()
-                return render(request, 'edicao.html', {'exerc':exerc, 'forms':forms})
-
-
-    return render(request, 'edicao.html', {'exerc':exerc, 'forms':forms})
-
-
-
-
-
+        return false
+    else:
+        return render(request, 'edicao.html', {'exerc':exerc, 'forms':forms })
 
 
 # Create your views here.

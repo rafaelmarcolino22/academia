@@ -1,17 +1,23 @@
 {% extends 'base.html' %}
-{% block content %}
-<div class="offset-1 col-md-10"> 
-    
-    <div class="divtarefas">
-    
+{% load crispy_forms_tags %}
 
-        <div class="exc">
-            <div class="row">
-                <div class="col-md-5">
-                <h2> {{ exerc.exercicio }} </h2> 
-                
-            </div>
+{% block content %}
+{% block title %}<title> Editar o Treino </title> {% endblock %}
+
+    <div class="offset-2 col-md-8 newbtn"> 
+        <div class="newLeg">
+            <h2>Editar o Treino </h2>
+
+
         </div>
-</div>
-</div>    
+        <form method="POST">
+            {% csrf_token %}
+            {{ forms | crispy}}
+
+            <input type="submit" value=" Adicionar " class="btn btn-success btnne " onclick="oi()"> 
+
+
+
+        </form>
+    </div> 
 {% endblock %}
