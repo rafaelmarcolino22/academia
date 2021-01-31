@@ -5,6 +5,11 @@
 {% block title %}<title> adicionar Treino </title> {% endblock %}
 
     <div class="offset-2 col-md-8 newbtn"> 
+        <div class="newLeg">
+            <h2>Adicione um novo Treino </h2>
+
+
+        </div>
         <form method="POST">
             {% csrf_token %}
             {{ forms | crispy}}
