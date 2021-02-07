@@ -36,7 +36,18 @@ def edicao(request, id):
     forms = TreinoNov(instance=exerc)
 
     if(request.method == 'POST'):
-        return false
+        
+        forms = TreinoNov(request.POST, instance=exerc)
+
+        if(request.method == 'POST'):
+            forms = TreinoNov(request.POST, instance=exerc)
+
+            if(forms.is_valid()):
+                exerc.save()
+                return redirect('/')
+            else:
+
+                return render(request, 'edicao.html', {'exerc':exerc, 'forms':forms })
     else:
         return render(request, 'edicao.html', {'exerc':exerc, 'forms':forms })
 
